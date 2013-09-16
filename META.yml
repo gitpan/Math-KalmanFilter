@@ -1,0 +1,46 @@
+---
+abstract: 'Kalman Filter(also known as Linear Quadratic Estimation) implementation for sensor fusion and such'
+author:
+  - 'Shantanu Bhadoria <shantanu at cpan dott org>'
+build_requires:
+  ExtUtils::MakeMaker: 0
+  File::Find: 0
+  File::Spec::Functions: 0
+  File::Temp: 0
+  List::Util: 0
+  Test::More: 0
+  strict: 0
+  warnings: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.30
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Math-KalmanFilter
+no_index:
+  directory:
+    - t
+    - xt
+    - examples
+    - corpus
+    - inc
+  package:
+    - DB
+provides:
+  Math::KalmanFilter:
+    file: lib/Math/KalmanFilter.pm
+    version: 0.02
+requires:
+  Moose: 0
+  perl: 5.010
+resources:
+  bugtracker: https://github.com/shantanubhadoria/math-kalmanfilter/issues
+  homepage: https://metacpan.org/release/Math-KalmanFilter
+  repository: git://github.com/shantanubhadoria/math-kalmanfilter.git
+version: 0.02
+x_contributors:
+  - 'Shantanu Bhadoria <shantanu.bhadoria@gmail.com>'
+  - 'Shantanu Bhadoria <shantanu@cpan.org>'
