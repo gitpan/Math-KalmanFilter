@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 package Math::KalmanFilter;
 
 # PODNAME: Math::KalmanFilter
@@ -10,7 +13,7 @@ package Math::KalmanFilter;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 # Dependencies
 use 5.010;
@@ -106,7 +109,7 @@ Math::KalmanFilter - Kalman Filter(also known as Linear Quadratic Estimation) im
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
@@ -163,13 +166,15 @@ opposite direction as the force of gravity) by measuring the direction in which 
 applied.
 
 Gyroscope measures the rate of rotation about one or all the axis of a body. while it gives fairly accurate 
-estimation of the angular velocity, if we just use it to calculate the current inclination based on the 
-starting inclination and the angular velocity since then there will be a lot of drift as gyroscope error will 
-accumulate over time as we calculate newer angles based previous angle and angular velocity.
+estimation of the angular velocity, if we use it to calculate the current inclination based on the starting 
+inclination and the angular velocity, there is a lot of drift, which means the gyroscope error will accumulate 
+over time as we calculate newer angles based on previous angle and angular velocity and the error in angular 
+velocity piles on.
 
-A real life example of how Kalman filter works is while driving on a highway in a car. If you use the time 
+A real life example of how Kalman filter works is while driving on a highway in a car. If you take the time 
 passed since when your started driving and your estimated average speed every hour and use it to calculate 
-the distance you have traveled your calculation will become more inaccurate as you drive longer and longer. 
+the distance you have traveled your calculation will become more inaccurate as you drive on.
+
 This is drift in value. However if you watch each milestone and calculate your current position using milestone
 data and your speed since the last milestone your result will be much more accurate. That is approximately close
 
